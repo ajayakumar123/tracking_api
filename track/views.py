@@ -18,9 +18,9 @@ class TrackNumberView(APIView):
         weight = request.query_params.get('weight')
         customer_name = request.query_params.get('customer_name')
         customer_slug = request.query_params.get('customer_slug')
-        print("11111111111")
+
         tracking_number = self.generate_unique_tracking_number()
-        print("22222222222",tracking_number)
+
         tracking_record = TrackingNumber.objects.create(
             tracking_number=tracking_number,
             origin_country_id=origin_country_id,
